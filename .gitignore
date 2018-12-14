@@ -1,0 +1,8 @@
+.vscode
+.atom
+.packages
+.directory
+.DS_Store
+Thumbs.db
+pubspec.lock
+examples/*.js*

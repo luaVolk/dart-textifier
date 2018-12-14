@@ -1,0 +1,7 @@
+name: textifier
+version: 1.0.0
+author: Volk <templar.volk@yandex.com>
+description: Convert images to text in your browser
+homepage: https://github.com/TemplarVolk/dart-textifier
+environment:
+  sdk: '>=2.0.0 <3.0.0'

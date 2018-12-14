@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Image to html</title>
+  </head>
+  <body>
+    <a href="/">⇐ Back to example list</a>
+    <div><b>Original image</b></div>
+    <img src="../images/piggies.png" id="piggies">
+
+    <form>
+      <div>
+        <div><b>Dimensions are measured in characters</b></div>
+        <label for="maxHeight">Max height:</label>
+        <input type="text" id="maxHeight" placeholder="Infinity">
+      </div>
+
+      <div>
+        <label for="maxWidth">Max width:</label>
+        <input type="text" id="maxWidth" placeholder="Infinity">
+      </div>
+      <br>
+      <div>
+        <label for="characters">Characters:</label>
+        <input type="text" id="characters" placeholder="01">
+      </div>
+
+      <div>
+        <label for="ordered">Ordered:</label>
+        <input type="checkbox" id="ordered">
+      </div>
+      <br>
+      <div>
+        <label for="background">Background:</label>
+        <input type="text" id="background" placeholder="#00000000 (transparent)">
+      </div>
+      <br>
+      <div>
+        <label for="color">Color:</label>
+        <select type="select" id="color">
+          <option value="0">Colored</option>
+          <option value="1">Grayscale</option>
+          <option value="2">Monochrome</option>
+        </select>
+      </div>
+
+      <br>
+      <input type="submit" value="Textify">
+    </form>
+    <br>
+
+    <div id="target"></div>
+
+
+    <script src="html.js" charset="utf-8"></script>
+  </body>
+</html>
