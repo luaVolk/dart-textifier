@@ -17,11 +17,7 @@ Map<String, num> getLetterDimensions() {
 
   pre.remove();
 
-  return {
-    'ratio': height / width,
-    'width': width,
-    'height': height
-  };
+  return {'ratio': height / width, 'width': width, 'height': height};
 }
 
 List<num> measureUnits(dynamic number, String dir, Map<String, num> font) {
@@ -39,15 +35,17 @@ List<num> measureUnits(dynamic number, String dir, Map<String, num> font) {
 
     div.remove();
 
-    return [width > 0 ? width : double.infinity,
-            height > 0 ? height : double.infinity];
+    return [
+      width > 0 ? width : double.infinity,
+      height > 0 ? height : double.infinity
+    ];
   }
 
   return [number, number];
 }
 
-List<int> scaleDimensions(int width, int height, dynamic maxWidth, dynamic maxHeight, Map<String, num> font) {
-
+List<int> scaleDimensions(int width, int height, dynamic maxWidth,
+    dynamic maxHeight, Map<String, num> font) {
   maxWidth = measureUnits(maxWidth, 'width', font)[0];
   maxHeight = measureUnits(maxHeight, 'height', font)[1];
 
