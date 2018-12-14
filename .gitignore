@@ -5,4 +5,4 @@
 .DS_Store
 Thumbs.db
 pubspec.lock
-examples/*.js*
+example/*.js*
