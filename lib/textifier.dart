@@ -160,7 +160,6 @@ class Textifier {
       }
 
       if (type == CONSOLE) {
-        //If console
         characters.insert(0, '\n' + log);
       }
 
