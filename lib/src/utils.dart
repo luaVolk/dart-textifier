@@ -1,7 +1,5 @@
 import 'dart:html';
 
-NodeValidator VALIDATOR;
-
 // Helper functions
 int toGrayscale(r, g, b) => (0.21 * r + 0.72 * g + 0.07 * b).round();
 

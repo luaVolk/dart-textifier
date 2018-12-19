@@ -41,10 +41,6 @@ class Textifier {
     ctx = canvas.getContext('2d');
 
     this.font = getLetterDimensions();
-
-    NodeValidatorBuilder BUILDER = new NodeValidatorBuilder.common();
-    BUILDER.allowInlineStyles();
-    VALIDATOR = BUILDER;
   }
 
   Future<Map<String, dynamic>> getPixels(String url) {
@@ -175,7 +171,7 @@ class Textifier {
 
       Element finale = document.createElement('pre');
 
-      finale.setInnerHtml(html.join(''), validator: VALIDATOR);
+      finale.setInnerHtml(html.join(''), treeSanitizer: NodeTreeSanitizer.trusted);
 
       return el.append(finale);
     }).catchError((error) {
