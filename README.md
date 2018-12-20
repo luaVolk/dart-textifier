@@ -34,7 +34,7 @@ Every other option will be in the option object.
   | maxWidth | `Infinity` | `String\|num`  | maxWidth should be a positive number. This sets maximum width of the rendered image. If it is not set or set with an invalid value, it will take as much space as it can.<br>Valid values are either a number or a valid CSS size value (e.g `200px`).<br>Unless specified units will be measured in characters.
   | maxHeight | `"Infinity"` | `String\|num`  | Same as maxWidth except that if it is not set the maximum height will be the the same as the height of the original image but in characters instead of pixels.
   | characters | `"01"` | `String`  | The character list to write the image with.
-  | background | `#00000000` | `String`   | Color of the background. This color will also be rendered in text.
+  | background | `"#00000000"` | `String`   | Color of the background. This color will also be rendered in text.
   | ordered | `false` | `bool`  | If true the characters will show up in order of the `characters` string
   | color | `0` | `int` | If the image should be colored, in grayscale or monochrome<br>`0 = colored`<br>`1 = grayscale`<br>`2 = monochrome`<br>Textifier comes with some [constants](#constants) so you don't have to memorize this
 
