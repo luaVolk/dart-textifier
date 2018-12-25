@@ -1,3 +1,4 @@
+# Textifier [![Pub](https://img.shields.io/pub/v/textifier.svg)](https://pub.dartlang.org/packages/textifier)
 >*Textifier is a dart library that lets you convert images to any text of your choosing, in your browser*
 
 | Original | Colored | Grayscale | Monochrome | Console |
