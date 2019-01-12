@@ -26,9 +26,9 @@ class Textifier {
   static const int GRAYSCALE = 1;
   static const int MONOCHROME = 2;
 
-  static const int HTML = 0;
-  static const int CANVAS = 1;
-  static const int CONSOLE = 2;
+  final int _HTML = 0;
+  final int _CANVAS = 1;
+  final int _CONSOLE = 2;
 
   Textifier(
       {this.maxWidth: double.infinity,
@@ -43,7 +43,7 @@ class Textifier {
     this.font = getLetterDimensions();
   }
 
-  Future<Map<String, dynamic>> getPixels(String url) {
+  Future<Map<String, dynamic>> _getPixels(String url) {
     ImageElement img = new ImageElement(src: url);
 
     return img.onLoad.first.then((Event e) {
@@ -77,12 +77,12 @@ class Textifier {
     });
   }
 
-  Future<List<String>> createCharacters(int type, String url) {
-    return getPixels(url).then((data) {
+  Future<List<String>> _createCharacters(int type, String url) {
+    return _getPixels(url).then((data) {
       List<String> characters = [];
       String log = '';
 
-      if (type == CANVAS) {
+      if (type == _CANVAS) {
         this.canvas.width = (data['width'] * this.font['width']).round();
         this.canvas.height = (data['height'] * this.font['height']).round();
 
@@ -122,7 +122,7 @@ class Textifier {
         }
 
         // TODO: DRY this
-        if (type == HTML) {
+        if (type == _HTML) {
           if (character == ' ') {
             characters.add(character);
           } else {
@@ -133,7 +133,7 @@ class Textifier {
           if ((i + 1) % data['width'] == 0) {
             characters.add('\n');
           }
-        } else if (type == CANVAS) {
+        } else if (type == _CANVAS) {
           if (character != ' ') {
             this.ctx.fillStyle = 'rgba($r, $g, $b, $a)';
             this.ctx.fillText(
@@ -155,7 +155,7 @@ class Textifier {
         }
       }
 
-      if (type == CONSOLE) {
+      if (type == _CONSOLE) {
         characters.insert(0, '\n' + log);
       }
 
@@ -164,7 +164,7 @@ class Textifier {
   }
 
   Future<Node> write(String url, Element el, [bool append = false]) {
-    return createCharacters(0, url).then((html) {
+    return _createCharacters(0, url).then((html) {
       if (!append) {
         el.setInnerHtml('');
       }
@@ -180,19 +180,19 @@ class Textifier {
   }
 
   Future<Node> draw(String url, Element el, [bool append = false]) {
-    return this.createCharacters(1, url).then((html) {
+    return _createCharacters(1, url).then((html) {
       if (!append) {
         el.setInnerHtml('');
       }
 
-      return el.append(this.canvas);
+      return el.append(canvas);
     }).catchError((error) {
       print(error);
     });
   }
 
   log(String url) {
-    return createCharacters(2, url).then((html) {
+    return _createCharacters(2, url).then((html) {
       context['console'].callMethod('log', html);
     }).catchError((error) {
       print(error);
