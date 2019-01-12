@@ -91,10 +91,6 @@ Every other option will be in the option object.
   Textifier.COLORED = 0;
   Textifier.GRAYSCALE = 1;
   Textifier.MONOCHROME = 2;
-
-  Textifier.HTML = 0;
-  Textifier.CANVAS = 1;
-  Textifier.CONSOLE = 2;
   ```
 
 ## License
