@@ -5,7 +5,7 @@ int toGrayscale(r, g, b) => (0.21 * r + 0.72 * g + 0.07 * b).round();
 
 Map<String, num> getLetterDimensions() {
   Element pre = document.createElement('pre');
-  pre.style.display = 'inline';
+  pre.style.position = 'absolute';
   pre.text = ' ';
   document.body.append(pre);
 
